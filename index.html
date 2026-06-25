@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisbos Cacao</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div class="lc-checkout-modal" id="lcCheckoutModal">
+  <div class="lc-checkout-box">
+    <button class="lc-checkout-close" onclick="lcCloseCheckout()">×</button>
+
+    <h3>Checkout</h3>
+    <p class="lc-checkout-sub">Complete your order details below.</p>
+
+    <form id="lcCheckoutForm">
+      <input type="text" id="lcCustomerName" placeholder="Full name" required>
+      <input type="tel" id="lcCustomerPhone" placeholder="Phone number" required>
+      <textarea id="lcCustomerAddress" placeholder="Complete delivery address" required></textarea>
+
+      <select id="lcPaymentMethod" required>
+        <option value="">Select payment method</option>
+        <option value="GCash">GCash</option>
+        <option value="COD">Cash on Delivery</option>
+      </select>
+
+      <textarea id="lcOrderNotes" placeholder="Order notes (optional)"></textarea>
+
+      <button type="submit" class="lc-btn lc-btn-primary">
+        Confirm & Send via Messenger
+      </button>
+    </form>
+  </div>
+</div>
+  <div class="lc-app">
+
+  <div class="lc-announce">
+    <span>Libreng LBC shipping nationwide on orders over <strong>₱2,500</strong> · Sumusunod sa tradisyon mula 2019</span>
+  </div>
+
+  <header class="lc-header">
+    <nav class="lc-nav">
+      <a href="#" class="lc-logo">
+        <span class="lc-logo-mark">L</span>
+        <span class="lc-logo-text">
+          <small>Bacuag's Best</small>
+          <span>Lisbos Cacao</span>
+        </span>
+      </a>
+      <ul class="lc-nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#featured">The Tablea</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="lc-nav-actions">
+        <button class="lc-cart-btn" onclick="lcOpenCart()" aria-label="Open cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="lc-cart-count lc-hidden" id="lcCartCount">0</span>
+        </button>
+        <button class="lc-mobile-toggle" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="lc-hero">
+    <div class="lc-hero-rays"></div>
+    <div class="lc-hero-inner">
+      <div>
+        <div class="lc-hero-tag">From Bacuag, Surigao del Norte</div>
+        <h1>Keeping the <em>tsokolate</em> tradition alive.</h1>
+        <div class="lc-hero-sub">Sikwate ng lola.</div>
+        <p>Hand-shaped pure tablea from 100% Filipino cacao. Roasted slow, ground stone-fine, and made the way lola taught us — no shortcuts, no additives.</p>
+        <div class="lc-hero-ctas">
+          <a href="#shop" class="lc-btn lc-btn-primary">
+            Shop Tablea
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#featured" class="lc-btn lc-btn-outline">Meet the Tablea</a>
+        </div>
+      </div>
+      <div class="lc-hero-visual">
+        <svg class="lc-hero-leaf" viewBox="0 0 100 100" fill="none">
+          <path d="M50 10 Q70 20 80 45 Q85 70 50 90 Q15 70 20 45 Q30 20 50 10 Z" fill="#5A6E47" opacity="0.8"/>
+          <path d="M50 10 L50 90" stroke="#3D4D31" stroke-width="1.5"/>
+          <path d="M50 25 L35 35 M50 35 L30 50 M50 50 L28 65 M50 65 L35 78 M50 25 L65 35 M50 35 L70 50 M50 50 L72 65 M50 65 L65 78" stroke="#3D4D31" stroke-width="0.8" opacity="0.7"/>
+        </svg>
+        <div class="lc-hero-img-main"></div>
+        <div class="lc-hero-stamp">
+          <span class="big">100%</span>
+          <span class="small">Pure Cacao</span>
+        </div>
+        <div class="lc-hero-card">
+          <div class="lc-hero-card-top">
+            <div class="lc-hero-card-img"></div>
+            <div class="lc-hero-card-info">
+              <small>Bestseller</small>
+              <h4>Pure Tablea Unsweetened — 110g</h4>
+            </div>
+          </div>
+          <div class="lc-hero-card-bottom">
+            <div class="lc-hero-card-price">₱140</div>
+            <button class="lc-hero-card-btn" onclick="lcAddToCart(1)">+ Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-trust">
+    <div class="lc-trust-inner">
+      <div class="lc-trust-item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div><strong>Est. 2019</strong><span>Surigao-made tradition</span></div>
+      </div>
+      <div class="lc-trust-item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><strong>30+ provinces</strong><span>Nationwide via LBC</span></div>
+      </div>
+      <div class="lc-trust-item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>FDA-compliant</strong><span>Locally sourced beans</span></div>
+      </div>
+      <div class="lc-trust-item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/></svg>
+        <div><strong>GCash &amp; COD</strong><span>Pay your way</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-featured" id="featured">
+    <div class="lc-featured-inner">
+      <div class="lc-featured-visual">
+        <div class="lc-featured-circle"></div>
+        <div class="lc-featured-product"></div>
+        <div class="lc-chip-float lc-chip-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Pure Cacao
+        </div>
+        <div class="lc-chip-float lc-chip-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L9 9l-7 .75L7.5 14l-1.5 7L12 17.75 18 21l-1.5-7L22 9.75 15 9z"/></svg>
+          Hand-shaped
+        </div>
+        <div class="lc-chip-float lc-chip-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Slow-roasted
+        </div>
+      </div>
+      <div class="lc-featured-content">
+        <span class="lc-featured-eyebrow">★ Our Pride &amp; Joy</span>
+        <h2>Pure Tablea, <em>walang halong</em> kahit ano. <span class="lc-just">just cacao.</span></h2>
+        <p class="lc-featured-sub">Each disk is shaped by hand from cacao beans we ferment, sun-dry, and stone-grind ourselves. No sugar. No fillers. Just the bittersweet soul of Mindanao cacao — ready for your morning sikwate, champorado, or champorado-flavored everything.</p>
+        <div class="lc-featured-facts">
+          <div class="lc-fact">
+            <div class="lc-fact-num"><em>72hr</em></div>
+            <div class="lc-fact-lbl">Fermentation for deeper flavor</div>
+          </div>
+          <div class="lc-fact">
+            <div class="lc-fact-num"><em>100%</em></div>
+            <div class="lc-fact-lbl">Cacao — no sugar, no fillers</div>
+          </div>
+          <div class="lc-fact">
+            <div class="lc-fact-num"><em>4</em></div>
+            <div class="lc-fact-lbl">Sizes from 110g to 1kg tub</div>
+          </div>
+          <div class="lc-fact">
+            <div class="lc-fact-num"><em>3 gen.</em></div>
+            <div class="lc-fact-lbl">Of family recipe &amp; technique</div>
+          </div>
+        </div>
+        <div class="lc-hero-ctas">
+          <a href="#shop" class="lc-btn lc-btn-primary">
+            Shop Pure Tablea
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#story" class="lc-btn lc-btn-outline">How It's Made</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-section" id="shop">
+    <div class="lc-section-head-row">
+      <div>
+        <div class="lc-section-eyebrow">The Shop</div>
+        <h2>From tablea to <em>tsokolate bars</em>.</h2>
+      </div>
+      <p class="lc-section-intro">From classic unsweetened tablea, to native batirol sets and modern dark chocolate — every product is small-batch and freshly made in Bacuag.</p>
+    </div>
+
+    <div class="lc-filter-row" id="lcFilters">
+      <button class="lc-chip lc-active" data-cat="all">All</button>
+      <button class="lc-chip" data-cat="tablea">Pure Tablea</button>
+      <button class="lc-chip" data-cat="chocolate">Chocolate &amp; Bars</button>
+      <button class="lc-chip" data-cat="snacks">Snacks &amp; Spreads</button>
+      <button class="lc-chip" data-cat="tools">Tools &amp; Sets</button>
+    </div>
+
+    <div class="lc-products-grid" id="lcProductsGrid"></div>
+  </section>
+
+  <section class="lc-story" id="story">
+    <div class="lc-story-grid">
+      <div class="lc-story-img">
+        <div class="lc-story-quote">
+          <div class="lc-story-quote-mark">"</div>
+          <p>Sa amin, ang tablea ay hindi lang pagkain — ito'y alaala.</p>
+          <div class="lc-story-quote-author">ATE ROSANNA</div>
+        </div>
+      </div>
+      <div class="lc-story-content">
+        <div class="lc-section-eyebrow">Our Story</div>
+        <h2>Bean-to-tablea, <em>by hand</em>.</h2>
+        <p>In the coastal town of Bacuag, our family has been shaping tablea the same way for three generations. We work directly with smallholder cacao farmers across Surigao del Norte — paying fair, picking only ripe pods, and roasting in small batches over wood fire.</p>
+        <p>It's slow work. Sometimes ang init, sometimes the rain comes. But it's the only way we know how — and the reason every tablea disk tastes like home.</p>
+        <div class="lc-story-sign">— Salamat sa inyong tiwala.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-why-section" id="why">
+    <div class="lc-section">
+      <div class="lc-why-grid">
+        <div class="lc-why-image">
+          <div class="lc-why-image-badge">
+            <div class="lc-why-image-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="lc-why-image-badge-text">
+              <small>Loved by</small>
+              <strong>1,200+ home cooks across PH</strong>
+            </div>
+          </div>
+        </div>
+        <div class="lc-why-content">
+          <div class="lc-section-eyebrow">Why Lisbos</div>
+          <h2>Real cacao, real <em>Pinoy</em> tradisyon.</h2>
+          <p>We don't cut corners. Every step from bean to tablea is done by hand the way our family has done it for three generations — and you can taste the difference in every cup of sikwate.</p>
+          <div class="lc-why-cards">
+            <div class="lc-why-card">
+              <div class="lc-why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/></svg>
+              </div>
+              <h3>100% Natural</h3>
+              <p>No fillers, no artificial flavors, no preservatives. Just stone-ground Surigao cacao.</p>
+            </div>
+            <div class="lc-why-card">
+              <div class="lc-why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l3-3m0 0l4-4m-4 4l4 4m-4-4h11a4 4 0 0 0 0-8h-1"/></svg>
+              </div>
+              <h3>Locally Made</h3>
+              <p>Supporting smallholder cacao farmers across Surigao del Norte.</p>
+            </div>
+            <div class="lc-why-card">
+              <div class="lc-why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3>Heart-Healthy</h3>
+              <p>Bioactive cacao compounds support healthy blood flow and circulation.</p>
+            </div>
+            <div class="lc-why-card">
+              <div class="lc-why-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3>Antioxidant-rich</h3>
+              <p>Loaded with flavonoids and minerals like magnesium &amp; iron.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-reviews-section" id="reviews">
+    <div class="lc-section">
+      <div class="lc-section-head-center">
+        <div class="lc-section-eyebrow">Reviews</div>
+        <h2>Loved by <em>kababayans</em> nationwide.</h2>
+      </div>
+      <div class="lc-reviews-grid">
+        <div class="lc-review-card">
+          <div class="lc-review-stars">★★★★★</div>
+          <blockquote>"Among the different tablea I've tried from Sagada to Davao, Lisbos from Surigao is the best so far! You can see how careful they are even in the way they package."</blockquote>
+          <div class="lc-review-meta">
+            <div class="lc-review-avatar">AG</div>
+            <div>
+              <div class="lc-review-name">Arlene A. Gonzales</div>
+              <div class="lc-review-date">January 22, 2021</div>
+            </div>
+          </div>
+        </div>
+        <div class="lc-review-card">
+          <div class="lc-review-stars">★★★★★</div>
+          <blockquote>"Tried using this for home-made drinks because we're starting a small business — super sarap! Pure na pure ang lasa. Ordering again, mas marami na."</blockquote>
+          <div class="lc-review-meta">
+            <div class="lc-review-avatar">AR</div>
+            <div>
+              <div class="lc-review-name">Ann Khahee Raliuga</div>
+              <div class="lc-review-date">March 4, 2020</div>
+            </div>
+          </div>
+        </div>
+        <div class="lc-review-card">
+          <div class="lc-review-stars">★★★★★</div>
+          <blockquote>"Napaka ganda ng pagkaka-box. Secure ang order ko, sobrang bango. Matutuwa ang mga Cordillerans — matitikman nila ang masarap na tableya from Surigao."</blockquote>
+          <div class="lc-review-meta">
+            <div class="lc-review-avatar">BB</div>
+            <div>
+              <div class="lc-review-name">Brent T. Bitan</div>
+              <div class="lc-review-date">December 26, 2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-faq-section" id="faq">
+    <div class="lc-section">
+      <div class="lc-faq-grid">
+        <div class="lc-faq-side">
+          <div class="lc-section-eyebrow">Questions</div>
+          <h2>Frequently <em>asked</em>.</h2>
+          <p>Everything you need to know about our tablea, shipping, and ordering. Can't find what you're looking for? Send us a message — we read every one.</p>
+          <div class="lc-faq-contact">
+            <small>Talk to us</small>
+            <p>Have a wholesale inquiry or product question?</p>
+            <a href="https://www.facebook.com/lisbostablea/" target="_blank" rel="noopener">
+              Message us on Facebook
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="lc-faq-list" id="lcFaqList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lc-cta-strip">
+    <div class="lc-cta-inner">
+      <div class="lc-cta-strip-tag">Mabuhay ang tsokolate!</div>
+      <h2>Bring home a piece of <em>Surigao</em>.</h2>
+      <p>Whether you're making sikwate for breakfast or champorado for the kids, real tablea makes the difference.</p>
+      <a href="#shop" class="lc-btn lc-btn-primary">
+        Shop the Collection
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="lc-footer">
+    <div class="lc-footer-grid">
+      <div class="lc-footer-brand">
+        <a href="#" class="lc-logo">
+          <span class="lc-logo-mark">L</span>
+          <span class="lc-logo-text">
+            <small>Bacuag's Best</small>
+            <span>Lisbos Cacao</span>
+          </span>
+        </a>
+        <p>Hand-crafted pure tablea, chocolate, and cacao products from Bacuag, Surigao del Norte. Made by Filipinos, for Filipinos — and the world.</p>
+        <div class="lc-footer-socials">
+          <a href="https://www.facebook.com/lisbostablea/" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V9.06a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.49z"/></svg>
+          </a>
+        </div>  
+      </div>
+      <div class="lc-footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop">All Products</a></li>
+          <li><a href="#shop">Pure Tablea</a></li>
+          <li><a href="#shop">Chocolate Bars</a></li>
+          <li><a href="#shop">Wholesale</a></li>
+          <li><a href="#shop">Gift Bundles</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h4>Contact</h4>
+        <p>Gloria St., Poblacion<br>Bacuag, Surigao del Norte<br><br>+63 917 174 3370<br>lisboscacaotrading@gmail.com</p>
+        <div class="lc-payment-row">
+          <span class="lc-pay-badge">GCash</span>
+          <span class="lc-pay-badge">Maya</span>
+          <span class="lc-pay-badge">COD</span>
+          <span class="lc-pay-badge">Bank</span>
+        </div>
+      </div>
+    </div>
+    <div class="lc-footer-bottom">
+      <div>© 2026 Lisbos Cacao Trading. All rights reserved.</div>
+      <div>Made with <span>♥</span> in Bacuag, Surigao del Norte 🇵🇭</div>
+    </div>
+  </footer>
+
+  <div class="lc-cart-overlay" id="lcCartOverlay" onclick="lcCloseCart()"></div>
+  <aside class="lc-cart-drawer" id="lcCartDrawer" aria-label="Shopping cart">
+    <div class="lc-cart-head">
+      <h3>Your Cart</h3>
+      <button class="lc-close-cart" onclick="lcCloseCart()" aria-label="Close cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="lc-cart-items" id="lcCartItems"></div>
+    <div class="lc-cart-foot" id="lcCartFoot" style="display:none;">
+      <div class="lc-cart-row"><span>Subtotal</span><span id="lcSubtotal">₱0.00</span></div>
+      <div class="lc-cart-row"><span>Shipping</span><span id="lcShipping">Calculated at checkout</span></div>
+      <div class="lc-cart-row lc-total"><span>Total</span><span id="lcTotal">₱0.00</span></div>
+      <button class="lc-btn lc-btn-primary" onclick="lcCheckout()">
+        Checkout
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+      <div class="lc-shipping-note">Free LBC shipping on orders ₱2,500+ · COD &amp; GCash accepted</div>
+    </div>
+  </aside>
+
+  <div class="lc-toast" id="lcToast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="lcToastText">Added to cart</span>
+  </div>
+
+</div>
+<script src="./js/main.js"></script>
+</body>
+</html>

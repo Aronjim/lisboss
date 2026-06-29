@@ -166,7 +166,8 @@
       document.getElementById('lcCartOverlay').classList.remove('lc-open');
     };
     window.lcCheckout = function () {
-     document.getElementById("lcCheckoutModal").classList.add("lc-open");
+      lcCloseCart();
+      document.getElementById("lcCheckoutModal").classList.add("lc-open");
     };
     window.lcCloseCheckout = function () {
      document.getElementById("lcCheckoutModal").classList.remove("lc-open");
@@ -215,11 +216,8 @@
    Notes:
    ${notes || "None"}`;
 
-     navigator.clipboard.writeText(summary);
-
-     lcShowToast("Order copied. Messenger will open.");
-
-     window.open("https://m.me/aronx.ronquillo", "_blank");
+     const messengerUrl = `https://m.me/YOUR_PAGE_USERNAME?text=${encodeURIComponent(summary)}`;
+     window.location.href = messengerUrl;
 
      lcCloseCheckout();
      lcCloseCart();

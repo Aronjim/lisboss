@@ -63,13 +63,19 @@
 .lc-announce strong { color: var(--lc-gold); font-weight: 600; }
 
 .lc-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(245, 237, 220, 0.72);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(139, 90, 60, 0.12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    background: rgba(245, 237, 220, 0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(139, 90, 60, 0.12);
+}
+.lc-app {
+    padding-top: 118px; /* adjust between 110px–130px if needed */
 }
 .lc-nav {
   max-width: 1280px;
@@ -1924,20 +1930,6 @@
   border-color: var(--lc-terracotta);
   box-shadow: 0 0 0 3px rgba(184,84,58,.12);
 }
-
-#lcCheckoutForm .lc-btn-primary {
-  width: 100%;
-  justify-content: center;
-  background: var(--lc-terracotta);
-  color: var(--lc-cream);
-  border-radius: 999px;
-  padding: 16px;
-}
-
-#lcCheckoutForm .lc-btn-primary:hover {
-  background: var(--lc-cocoa-dark);
-}
-
 /* Force checkout drawer visibility */
 .lc-checkout-modal.lc-open {
   background: rgba(31, 17, 8, 0.42) !important;
@@ -1966,4 +1958,81 @@
 #lcCheckoutForm input::placeholder,
 #lcCheckoutForm textarea::placeholder {
   color: #8b6b55 !important;
+}
+
+.lc-checkout-submit-btn {
+  width: 100% !important;
+  padding: 20px 24px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  background: #c96542 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+
+  font-family: var(--lc-serif) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+
+  box-shadow: 0 12px 30px rgba(201, 101, 66, 0.35) !important;
+}
+
+.lc-checkout-submit-btn:hover {
+  background: #a84730 !important;
+}
+#lcCheckoutForm .lc-btn-primary {
+    width: 100%;
+    padding: 18px 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #C96542;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 999px;
+
+    font-family: var(--lc-serif);
+    font-size: 20px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all .25s ease;
+
+    box-shadow: 0 12px 30px rgba(201, 101, 66, .35);
+}
+
+#lcCheckoutForm .lc-btn-primary:hover {
+    background: #B45536;
+    transform: translateY(-2px);
+}
+
+#lcCheckoutForm .lc-btn-primary:active {
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .lc-cart-drawer {
+    z-index: 10050 !important;
+    pointer-events: auto !important;
+  }
+
+  .lc-cart-foot {
+    position: relative !important;
+    z-index: 10060 !important;
+    pointer-events: auto !important;
+  }
+
+  .lc-cart-foot .lc-btn-primary {
+    pointer-events: auto !important;
+    touch-action: manipulation;
+  }
+
+  .lc-cart-overlay {
+    z-index: 10040 !important;
+  }
 }

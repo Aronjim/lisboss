@@ -2128,3 +2128,43 @@
     height: 50px !important;
   }
 }
+
+/* Mobile checkout fix */
+@media (max-width: 600px) {
+  .lc-checkout-modal {
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+
+  .lc-checkout-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 28px 20px !important;
+    overflow-y: auto !important;
+  }
+
+  .lc-checkout-box form,
+  #lcCheckoutForm {
+    width: 100% !important;
+  }
+
+  .lc-checkout-box input,
+  .lc-checkout-box textarea,
+  .lc-checkout-box select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .lc-checkout-box textarea {
+    min-height: 130px !important;
+  }
+
+  .lc-checkout-box .lc-btn,
+  .lc-checkout-box button[type="submit"] {
+    width: 100% !important;
+  }
+}

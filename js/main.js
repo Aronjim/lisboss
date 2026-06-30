@@ -216,7 +216,7 @@
    Notes:
    ${notes || "None"}`;
 
-   const messengerUrl = `https://www.messenger.com/t/110536578438038?text=${encodeURIComponent(summary)}`;
+   const messengerUrl = `https://m.me/110536578438038?text=${encodeURIComponent(summary)}`;
    window.open(messengerUrl, "_blank");
 
      lcCloseCheckout();

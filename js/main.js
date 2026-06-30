@@ -216,8 +216,8 @@
    Notes:
    ${notes || "None"}`;
 
-     const messengerUrl = `https://www.facebook.com/messages/t/jachviloma?text=${encodeURIComponent(summary)}`;
-     window.location.href = messengerUrl;
+   const messengerUrl = "https://www.messenger.com/t/110536578438038";
+   window.location.href = messengerUrl;
 
      lcCloseCheckout();
      lcCloseCart();

@@ -217,7 +217,7 @@
    ${notes || "None"}`;
 
    const messengerUrl = `https://m.me/110536578438038?text=${encodeURIComponent(summary)}`;
-   window.open(messengerUrl, "_blank");
+   window.open(messengerUrl, "_blank");;
 
      lcCloseCheckout();
      lcCloseCart();

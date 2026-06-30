@@ -2036,3 +2036,95 @@
     z-index: 10040 !important;
   }
 }
+
+/* Mobile header polish */
+@media (max-width: 480px) {
+  .lc-announce {
+    padding: 10px 18px;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .lc-announce span {
+    display: inline-block;
+    max-width: 310px;
+  }
+
+  .lc-nav {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .lc-logo {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .lc-logo-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .lc-logo-text small {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .lc-logo-text span {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .lc-nav-actions {
+    margin-left: auto;
+  }
+
+  .lc-cart-btn {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .lc-logo-text span {
+    font-size: 21px;
+  }
+
+  .lc-logo-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .lc-cart-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lc-logo-text span {
+    font-size: 21px !important;
+  }
+
+  .lc-logo-text small {
+    font-size: 9px !important;
+  }
+
+  .lc-logo-mark {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 16px !important;
+  }
+
+  .lc-nav {
+    padding: 14px 16px !important;
+  }
+
+  .lc-cart-btn {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}

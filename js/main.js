@@ -216,7 +216,7 @@
    Notes:
    ${notes || "None"}`;
 
-     const messengerUrl = `https://m.me/YOUR_PAGE_USERNAME?text=${encodeURIComponent(summary)}`;
+     const messengerUrl = `https://www.facebook.com/messages/t/jachviloma?text=${encodeURIComponent(summary)}`;
      window.location.href = messengerUrl;
 
      lcCloseCheckout();

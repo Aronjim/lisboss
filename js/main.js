@@ -217,7 +217,7 @@
    ${notes || "None"}`;
 
    const messengerUrl = `https://www.messenger.com/t/110536578438038?text=${encodeURIComponent(summary)}`;
-   window.location.href = messengerUrl;
+   window.open(messengerUrl, "_blank");
 
      lcCloseCheckout();
      lcCloseCart();
